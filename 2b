@@ -1,0 +1,13 @@
+Exercise 2a is at the bottom of Exercise2.java
+
+Exercise 2b:
+
+1. Demonstrate the heap sort algorithm for the following input array of integers:
+3, 28, 14, -5, 6, 12, 3
+Show the steps of phase 1 graphically, by means of tree structures as illustrated in Figure 2.
+Show the steps of phase 2 by means of arrays as depicted in Figure 1. Include the steps in
+your Java code as comments.
+
+
+2. What is the order of run-time complexity of the algorithms pushUp, buildHeap, pushDown,
+pickHeap, and so, of heap sort, for an array of N elements? Motivate your answer.
