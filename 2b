@@ -26,5 +26,38 @@ Phase 1:
 			 6   14
 			/\     /\
 		  -5  3  12  3
+		  
+Phase 2:
+	1. 28, 6, 14, -5, 3, 12, 3
+	
+		Exchange 28 with 3 at the end, exchange the 3 at the top with 14. Exchange 12 and 3. 28 is sorted.
+			
+	2. 14, 6, 3, -5, 12, 3 | 28
+	
+		Exchange 14 with 3 at the end, exchange the 3 at the top with 12. 14 is sorted.
+		
+	3. 12, 6, 3, -5, 3 | 14, 28
+	
+		Exchange 12 with 3 at the end, exchange the 3 at the top with 6. 12 is sorted.
+		
+	4. 6, 3, 3, -5 | 12, 14, 28
+	
+		Exchange 6 with -5 at the end, exchange -5 with either 3 (I choose 3 at the end). 6 is sorted.
+		
+	5. 3, 3, -5 | 6, 12, 14, 28
+	
+		Exchange 3 with -5 at the end. Exchange -5 at the top with 3. 3 is sorted.
+		
+	6. 3, -5 | 3, 6, 12, 14, 28
+	
+		Exchange 3 with -5. 3 is sorted.
+		
+	7. -5 | 3, 3, 6, 12, 14, 28
+	
+		-5 is last number, so sorted.
+		
+	8. -5, 3, 3, 6, 12, 14, 28
+		
+		
 2. What is the order of run-time complexity of the algorithms pushUp, buildHeap, pushDown,
 pickHeap, and so, of heap sort, for an array of N elements? Motivate your answer.
