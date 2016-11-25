@@ -13,8 +13,8 @@ public class Exercise2
     readFromFile(source, "AliceSorted.txt");
     
     int numberOfComparisons=removeSortedDuplicates(source,destination);
-   // System.out.printf("Source: %s\n",source);
-    System.out.printf("Destination: %s\n",destination);
+//    System.out.printf("Source: %s\n",source);
+//    System.out.printf("Destination: %s\n",destination);
     System.out.printf("%d comparisons made\n",numberOfComparisons);
   }
   
@@ -73,11 +73,14 @@ public class Exercise2
       int numberOfComparisons=0;
       int pos = 0;
       destination.add(sortedSource.get(pos));
-      for(int i=0;i<sortedSource.size();i++)
+      for(int i=0;i<sortedSource.size();i++) 
+    	  // checks for each element of the source ArrayList, if it is equal to the last element of the destination ArrayList 
+    	  
       {
     	numberOfComparisons++;
         if(sortedSource.get(i)!=destination.get(pos))
-        {
+        	// if it is not the same, then the element is not in the destination ArrayList yet, so we add it now
+        { 
         	destination.add(sortedSource.get(i));
         	pos++;
         }
@@ -108,11 +111,11 @@ public class Exercise2
    * @param source
    * @param string
    */
-  private static void fill(ArrayList<Character> source, String string)
-  {
-    assert source!=null : "Source array should be initialized";
-    for(int i=0;i<string.length();i++)
-      source.add(i,string.charAt(i));
-  }
-
+//  private static void fill(ArrayList<Character> source, String string)
+//  {
+//    assert source!=null : "Source array should be initialized";
+//    for(int i=0;i<string.length();i++)
+//      source.add(i,string.charAt(i));
+//  }
+//
 }
