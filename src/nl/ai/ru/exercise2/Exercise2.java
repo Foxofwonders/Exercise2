@@ -1,5 +1,6 @@
 package nl.ai.ru.exercise2;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -9,12 +10,24 @@ public class Exercise2
   {
     ArrayList<Character> source=new ArrayList<Character>();
     ArrayList<Character> destination=new ArrayList<Character>();
-    fill(source,"Alice was beginning to get very tired of sitting by her sister on the bank");
+    readFromFile(source, "Alice.txt");
+    //fill(source,"Alice was beginning to get very tired of sitting by her sister on the bank");
     int numberOfComparisons=removeDuplicates(source,destination);
     System.out.printf("Source: %s\n",source);
     System.out.printf("Destination: %s\n",destination);
     System.out.printf("%d comparisons made\n",numberOfComparisons);
   }
+  
+  private static void readFromFile(ArrayList<Character> source, String fileName) throws IOException
+  {
+	  FileInputStream input = new FileInputStream (fileName);
+	  int c;
+	  while ((c =input.read())>=0)
+	  {
+		  source.add((char) c);
+	  }
+  }
+  
 /**
  * Copies Characters from source array to destination array, without duplicates
  * @param source
