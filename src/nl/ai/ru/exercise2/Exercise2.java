@@ -39,6 +39,9 @@ public class Exercise2
    * 1.3
    * Reduce the order of run-time complexity
    * 
+   * If the ArrayList is sorted in alphabetic order, it is not necessary to compare the element of the source 
+   * to every element of the destination ArrayList, but just the last one. Thus a if-statement is totally sufficient 
+   * and the other loop, which caused the O(n^2) order is not needed anymore. Hence the order is now O(n).
    * 
    */
 /**
