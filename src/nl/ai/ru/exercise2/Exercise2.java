@@ -13,8 +13,8 @@ public class Exercise2
     readFromFile(source, "AliceSorted.txt");
     
     int numberOfComparisons=removeSortedDuplicates(source,destination);
-//    System.out.printf("Source: %s\n",source);
-//    System.out.printf("Destination: %s\n",destination);
+    System.out.printf("Source: %s\n",source);
+    System.out.printf("Destination: %s\n",destination);
     System.out.printf("%d comparisons made\n",numberOfComparisons);
   }
   
@@ -24,7 +24,10 @@ public class Exercise2
 	  int c;
 	  while ((c =input.read())>=0)
 	  {
+		  if( (int)c != 10 && (int)c != 13)
+		  {
 		  source.add((char) c);
+		  }
 	  }
   }
   
@@ -78,7 +81,7 @@ public class Exercise2
     	  
       {
     	numberOfComparisons++;
-        if(sortedSource.get(i)!=destination.get(pos))
+        if(sortedSource.get(i)!=destination.get(pos) && (int)sortedSource.get(i)!= 10 && (int)sortedSource.get(i)!= 13)
         	// if it is not the same, then the element is not in the destination ArrayList yet, so we add it now
         { 
         	destination.add(sortedSource.get(i));
@@ -111,19 +114,7 @@ public class Exercise2
    * @param source
    * @param string
    */
-//  private static void fill(ArrayList<Character> source, String string)
-//  {
-//    assert source!=null : "Source array should be initialized";
-//    for(int i=0;i<string.length();i++)
-//      source.add(i,string.charAt(i));
-//  }
-//
-  
-  /*
-   * input n = int p
-   * Run-time complexity = O(n^.5)
-   * It runs the for loop until it reaches the square root of n.
-   */
+
   static boolean isPrime(int p)
   {
 	  if (p <= 1)
@@ -147,7 +138,7 @@ public class Exercise2
   /*
    * input n = arraylist numbers' size
    * It runs through every element of the list, so that's O(n), and then it executes the isPrime function, so O(n)*O(n^.5) = O(n^1.5)
-   * (Or O(n*n^.5), if that looks better?)
+   * (Or O(n*n^1.5), if that looks better?)
    */
   static int showPrimes (ArrayList<Integer> numbers)
   {
