@@ -10,10 +10,10 @@ public class Exercise2
   {
     ArrayList<Character> source=new ArrayList<Character>();
     ArrayList<Character> destination=new ArrayList<Character>();
-    readFromFile(source, "Alice.txt");
-    //fill(source,"Alice was beginning to get very tired of sitting by her sister on the bank");
-    int numberOfComparisons=removeDuplicates(source,destination);
-    System.out.printf("Source: %s\n",source);
+    readFromFile(source, "AliceSorted.txt");
+    
+    int numberOfComparisons=removeSortedDuplicates(source,destination);
+   // System.out.printf("Source: %s\n",source);
     System.out.printf("Destination: %s\n",destination);
     System.out.printf("%d comparisons made\n",numberOfComparisons);
   }
@@ -28,13 +28,18 @@ public class Exercise2
 	  }
   }
   
-  /*
+  /* 1.2
    * Runtime complexity O(n^2) with n the number of elements of the first Arraylist argument.
    * 
    * In this case n is the number of elements in source.
    * For each element of the source, the for-loop runs once (making the order O(n)). When it does so, it executes 'addWithoutDuplicates',
    * which compares the given character to every other character in the arraylist also O(n).
    * Because it executes O(n) times O(n), the total run-time order is O(n)*O(n)=O(n^2).
+   * 
+   * 1.3
+   * Reduce the order of run-time complexity
+   * 
+   * 
    */
 /**
  * Copies Characters from source array to destination array, without duplicates
@@ -51,6 +56,32 @@ public class Exercise2
       numberOfComparisons+=addWithoutDuplicates(source.get(i),destination);
     return numberOfComparisons;
   }
+  
+  /**
+   * Copies Characters from sorted source array to destination array, without duplicates
+   * @param sortedSource
+   * @param destination
+   * @return number of comparisons made
+   */
+    private static int removeSortedDuplicates(ArrayList<Character> sortedSource, ArrayList<Character> destination)
+    {
+      assert sortedSource!=null : "Source array should be initialized";
+      assert destination!=null : "Destination array should be initialized";
+      int numberOfComparisons=0;
+      int pos = 0;
+      destination.add(sortedSource.get(pos));
+      for(int i=0;i<sortedSource.size();i++)
+      {
+    	numberOfComparisons++;
+        if(sortedSource.get(i)!=destination.get(pos))
+        {
+        	destination.add(sortedSource.get(i));
+        	pos++;
+        }
+      }   
+      return numberOfComparisons;
+    }
+    
 
   /**
    * Copy a character to the destination array, without duplicates
