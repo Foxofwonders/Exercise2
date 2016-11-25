@@ -28,6 +28,14 @@ public class Exercise2
 	  }
   }
   
+  /*
+   * Runtime complexity O(n^2) with n the number of elements of the first Arraylist argument.
+   * 
+   * In this case n is the number of elements in source.
+   * For each element of the source, the for-loop runs once (making the order O(n)). When it does so, it executes 'addWithoutDuplicates',
+   * which compares the given character to every other character in the arraylist also O(n).
+   * Because it executes O(n) times O(n), the total run-time order is O(n)*O(n)=O(n^2).
+   */
 /**
  * Copies Characters from source array to destination array, without duplicates
  * @param source
