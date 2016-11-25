@@ -118,4 +118,61 @@ public class Exercise2
 //      source.add(i,string.charAt(i));
 //  }
 //
+  
+  /*
+   * input n = int p
+   * Run-time complexity = O(n^.5)
+   * It runs the for loop until it reaches the square root of n.
+   */
+  static boolean isPrime(int p)
+  {
+	  if (p <= 1)
+		  return false;
+	  for (int divisor = 2 ; divisor <= Math.sqrt(p); divisor++)
+		  if (p % divisor == 0)
+			  return false;
+	  return true;
+  }
+  
+  /*
+   * input n = arraylist list's size
+   * Run-time complexity = O(1)
+   * Asking the list's size is just one step, independent of the list's actual size.
+   */
+  static int numberOfElements(ArrayList<Integer> list)
+  {
+	  return list.size();
+  }
+  
+  /*
+   * input n = arraylist numbers' size
+   * It runs through every element of the list, so that's O(n), and then it executes the isPrime function, so O(n)*O(n^.5) = O(n^1.5)
+   * (Or O(n*n^.5), if that looks better?)
+   */
+  static int showPrimes (ArrayList<Integer> numbers)
+  {
+	  int foundPrimes = 0 ;
+	  for (int i = 0 ; i < numbers.size(); i++)
+	  {
+		  int n = numbers.get(i) ;
+		  if (isPrime (n))
+		  {
+			  System.out.printf("%d is a prime\n",n);
+			  foundPrimes++ ;
+		  }
+	  }
+	  return foundPrimes;
+  }
+  
+  /*
+   * input n = arraylist numbers' size
+   * Run-time complexity = O(n). It runs through every element of the arraylist except the last, but O(n-1) is still O(n)
+   */
+  static boolean isSorted (ArrayList<Integer> numbers)
+  {
+	  for (int i = 0 ; i < numbers.size()-1; i++)
+		  if (numbers.get(i) > numbers.get(i+1))
+			  return false;
+	  return true;
+  }
 }
