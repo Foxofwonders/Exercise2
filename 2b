@@ -83,3 +83,5 @@ pickHeap
 - n * pushDown
   = n * O(log (n))
   = O(n log(n))
+  
+So of heap sort: O(n log (n)) + O(n log(n)) = O(2 n log(n)) = O(n log(n))
