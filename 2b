@@ -61,3 +61,25 @@ Phase 2:
 		
 2. What is the order of run-time complexity of the algorithms pushUp, buildHeap, pushDown,
 pickHeap, and so, of heap sort, for an array of N elements? Motivate your answer.
+
+n = number of elements in array(list)
+
+pushUp
+- number of comparisons/swaps 	= (depth in tree - 1) * swap with parent
+								= (2log(n) - 1) * swap
+								= O(log(n)) * O(1)
+								= O(log(n))
+
+buildHeap
+- n * pushUp = O(n) * O(log(n)) = O(n log(n))
+
+pushDown
+- swap(pos 0 with pos n-1) + compare immediate children * (tree depth - 1)
+  = O(1) + swap * (2log(n) - 1)
+  = O(1) + O(1) * O(log (n))
+  = O(log (n))
+
+pickHeap
+- n * pushDown
+  = n * O(log (n))
+  = O(n log(n))
